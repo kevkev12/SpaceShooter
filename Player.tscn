@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://kenney_topdowntanksredux/PNG/Default size/tankBody_red_outline.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.4188, 29.4168 )
+
+[node name="Player" type="Area2D" index="0"]
+
+position = Vector2( 502.355, 207.06 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+rot_speed = 2.6
+movement = 500
+max_speed = 400
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0.988678, 0.458527 )
+scale = Vector2( 1.37098, 1.43104 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 1.36035, 1.52588e-005 )
+shape = SubResource( 1 )
+
+
